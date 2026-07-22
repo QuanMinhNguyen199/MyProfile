@@ -1,0 +1,2 @@
+import { ArrowUp } from 'lucide-react'
+export function Footer({ language }: { language:'en'|'vi' }) { return <footer><div className="container footer-inner"><div><span className="logo"><span>Q</span>N</span><p>{language==='en'?'Designed and built with intention.':'Được thiết kế và xây dựng có chủ đích.'}</p></div><p>© {new Date().getFullYear()} Quan Minh Nguyen</p><a href="#top" aria-label="Back to top"><ArrowUp/></a></div></footer> }

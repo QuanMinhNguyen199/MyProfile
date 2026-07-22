@@ -1,0 +1,5 @@
+import { Award, GraduationCap } from 'lucide-react'
+import { certification, education } from '../../data/experience'
+import type { Language } from '../../types'
+import { SectionHeading } from '../layout/SectionHeading'
+export function Education({language}:{language:Language}) { return <section id="education" className="section"><div className="container"><SectionHeading eyebrow={language==='en'?'05 / Education':'05 / Học vấn'} title={language==='en'?'Learning with a practical focus.':'Học tập với trọng tâm thực tiễn.'}/><div className="education-grid"><article className="education-card"><GraduationCap/><span>{education.period}</span><h3>{education.degree[language]}</h3><p>{education.specialization[language]}</p><strong>{education.university}</strong><small>GPA · {education.gpa}</small></article><article className="education-card"><Award/><span>{certification.year}</span><h3>{certification.name[language]}</h3><strong>{certification.institution}</strong><p>{certification.description[language]}</p></article></div></div></section> }

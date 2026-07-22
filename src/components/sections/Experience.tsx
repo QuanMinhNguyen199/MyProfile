@@ -1,0 +1,4 @@
+import { experiences } from '../../data/experience'
+import type { Language } from '../../types'
+import { SectionHeading } from '../layout/SectionHeading'
+export function Experience({language}:{language:Language}) { return <section id="experience" className="section section-tint"><div className="container"><SectionHeading eyebrow={language==='en'?'04 / Experience':'04 / Kinh nghiệm'} title={language==='en'?'Experience across design and AI.':'Kinh nghiệm trong thiết kế và AI.'}/><div className="timeline">{experiences.map(item=><article className="timeline-item" key={item.organization}><div className="timeline-date">{item.period}</div><div><p className="project-role">{item.organization}</p><h3>{item.role[language]}</h3><ul>{item.description.map(d=><li key={d.en}>{d[language]}</li>)}</ul></div></article>)}</div></div></section> }
