@@ -7,7 +7,8 @@ const labels = { en:['About','Skills','Projects','Experience','Education','Conta
 const ids = ['about','skills','projects','experience','education','contact']
 export function Navbar({ language, theme, toggleLanguage, toggleTheme, hasCv }: { language: Language; theme: Theme; toggleLanguage:()=>void; toggleTheme:()=>void; hasCv:boolean }) {
  const [open,setOpen]=useState(false)
- const cvPath = `${import.meta.env.BASE_URL}QUAN-MINH-NGUYEN-CV-EN.pdf`
+ const cvFilename = language === 'en' ? 'QUAN-MINH-NGUYEN-CV-EN.pdf' : 'QUAN-MINH-NGUYEN-CV.pdf'
+ const cvPath = `${import.meta.env.BASE_URL}${cvFilename}`
  return <header className="nav-wrap"><nav className="nav container" aria-label="Main navigation">
   <a href="#top" className="logo" aria-label="Quan Minh Nguyen home"><span>Q</span>N</a>
   <button className="menu-button" onClick={()=>setOpen(!open)} aria-label={open?'Close menu':'Open menu'} aria-expanded={open}>{open?<X/>:<Menu/>}</button>

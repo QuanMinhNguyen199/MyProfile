@@ -73,13 +73,14 @@ Nếu chưa có ảnh, website tự động hiển thị monogram **QN**.
 
 ### CV
 
-Đặt file PDF tại:
+Đặt hai file PDF tại:
 
 ```text
 public/QUAN-MINH-NGUYEN-CV-EN.pdf
+public/QUAN-MINH-NGUYEN-CV.pdf
 ```
 
-Sau đó đổi `HAS_CV` thành `true` trong `src/App.tsx`. Khi chưa có file, các nút tải CV được vô hiệu hóa an toàn.
+Website tự động tải CV tiếng Anh khi giao diện đang ở English và CV tiếng Việt khi giao diện đang ở Tiếng Việt. `HAS_CV` trong `src/App.tsx` phải là `true`; khi chưa có file, đặt giá trị này thành `false` để vô hiệu hóa các nút tải CV an toàn.
 
 ## Deploy miễn phí — khuyến nghị GitHub Pages
 

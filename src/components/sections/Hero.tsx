@@ -8,7 +8,8 @@ import type { Language } from '../../types'
 export function Hero({ language, hasCv }: { language: Language; hasCv: boolean }) {
  const [imageFailed,setImageFailed]=useState(false)
  const profileImage = `${import.meta.env.BASE_URL}profile.jpg`
- const cvPath = `${import.meta.env.BASE_URL}QUAN-MINH-NGUYEN-CV-EN.pdf`
+ const cvFilename = language === 'en' ? 'QUAN-MINH-NGUYEN-CV-EN.pdf' : 'QUAN-MINH-NGUYEN-CV.pdf'
+ const cvPath = `${import.meta.env.BASE_URL}${cvFilename}`
  return <section id="top" className="hero"><div className="container hero-grid">
   <motion.div initial={{opacity:0,y:18}} animate={{opacity:1,y:0}} transition={{duration:.55}} className="hero-copy">
    <div className="status"><i/>{language==='en'?'Open to AI engineering opportunities':'Sẵn sàng cho cơ hội kỹ thuật AI'}</div>
